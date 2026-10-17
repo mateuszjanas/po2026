@@ -2,21 +2,18 @@ package agh.po.lab2;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Porownanie_wynikow {
     public static void main(String[] args) {
         ArrayList<Integer> listain= new ArrayList<>();
-        for (int i=0;i<6;i++){
-        Scanner liczby = new Scanner((System.in));
-        System.out.print("Podaj liczbe");
-        listain.add(Integer.valueOf(liczby.nextLine()));
+        for (int i = 0; i < 6; i++) {
+            listain.add(Integer.valueOf(args[i]));
         }
-
         ArrayList<Integer> lista= new ArrayList<>();
+        Random random =new Random();
         while(lista.size()<6) {
-            Random random = new Random();
-            int r = random.nextInt((49 - 1) + 1);
+
+            int r = random.nextInt(49) + 1;
             if (!lista.contains(r))
                 lista.add(r);
         }
